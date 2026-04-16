@@ -17,7 +17,7 @@ export async function createPost(data) {
   const res = await fetch(BASE, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
+    body: JSON.stringify({...data,title:""}),
   });
   if (!res.ok) {
     const err = await res.json();

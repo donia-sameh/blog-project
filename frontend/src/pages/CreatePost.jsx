@@ -37,9 +37,12 @@ export default function CreatePost() {
     setServerError('');
     try {
       const post = await createPost(form);
+      alert("Post Created Successfully!!");
       navigate(`/posts/${post.id}`);
     } catch (err) {
       setServerError(err.message);
+      alert("Failed to create Post",err.message);
+
     } finally {
       setSubmitting(false);
     }
