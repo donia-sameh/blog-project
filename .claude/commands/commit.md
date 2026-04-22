@@ -1,6 +1,6 @@
 # /commit
 
-Generate commit message suggestions from staged changes and commit with your selection.
+Generate commit message suggestions from staged changes and commit with your selection. Then push to remote.
 
 ## How it works
 
@@ -10,6 +10,7 @@ Generate commit message suggestions from staged changes and commit with your sel
 4. Show options as a numbered list
 5. Ask: "Choose a number (1, 2, or 3) to commit."
 6. When you select a number, run `git commit -m "<selected message>"`
+7. After commit succeeds, run `git push` to push to remote
 
 ## Commit types
 
@@ -63,3 +64,4 @@ Choose a number (1, 2, or 3) to commit.
 - Do NOT explain or justify the changes — just suggest messages
 - Do NOT ask the user to describe changes unless the diff is unclear or ambiguous
 - After the user selects, immediately commit with no additional prompts
+- After commit succeeds, automatically push to remote with `git push`
