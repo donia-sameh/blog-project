@@ -18,9 +18,12 @@ async function getDb() {
         author TEXT NOT NULL,
         category TEXT NOT NULL DEFAULT 'General',
         status TEXT NOT NULL DEFAULT 'draft' CHECK(status IN ('draft', 'published')),
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME
       )
     `);
+    // migrate existing databases that predate this column
+    try { await db.exec('ALTER TABLE posts ADD COLUMN updated_at DATETIME'); } catch (_) {}
   }
   return db;
 }

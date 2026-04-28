@@ -8,8 +8,6 @@
   color: #a6adc8;
   text-decoration: none;
   font-size: 0.9rem;
-  display: inline-block;
-  margin-bottom: 1.5rem;
   transition: color 0.2s;
 }
 
@@ -71,6 +69,110 @@
   border-top: 1px solid #313244;
   padding-top: 1.5rem;
 }
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.editBtn {
+  background: #cba6f7;
+  color: #1e1e2e;
+  text-decoration: none;
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.editBtn:hover { opacity: 0.85; }
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.deleteBtn {
+  background: transparent;
+  color: #f38ba8;
+  border: 1px solid #f38ba8;
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.deleteBtn:hover {
+  background: #f38ba8;
+  color: #1e1e2e;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.dialog {
+  background: #1e1e2e;
+  border: 1px solid #313244;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+}
+
+.dialogText {
+  color: #cdd6f4;
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.cancelBtn {
+  background: #313244;
+  color: #cdd6f4;
+  border: none;
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cancelBtn:hover { opacity: 0.8; }
+
+.confirmDeleteBtn {
+  background: #f38ba8;
+  color: #1e1e2e;
+  border: none;
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.confirmDeleteBtn:hover { opacity: 0.85; }
+.confirmDeleteBtn:disabled,
+.cancelBtn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .error { color: #f38ba8; }
 .loading { color: #a6adc8; }
